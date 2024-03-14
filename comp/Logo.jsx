@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Logo() {
     return (
-        <Link href="/"><h1>TRCKER</h1></Link>
+        <Link href="/"><h1 className='logo'>TRCKER</h1></Link>
     );
 }
 

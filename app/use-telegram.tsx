@@ -2,7 +2,6 @@
 'use client';
 
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
-import { sharedConfig } from '@silverbullet/config';
 
 const testMode = sharedConfig().telegram.testMode;
 

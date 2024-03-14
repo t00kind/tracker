@@ -5,8 +5,11 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  white-space: nowrap;
 }
-
+.cool {
+  margin-bottom: 20%
+}
 .description {
   display: inherit;
   justify-content: inherit;
@@ -130,6 +133,9 @@
 @media (max-width: 700px) {
   .content {
     padding: 4rem;
+  }
+  .cool {
+    margin-bottom: 25vh;
   }
 
   .grid {
