@@ -75,4 +75,12 @@ a {
   html {
     color-scheme: dark;
   }
+  .btn {
+    background-color: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-shadow: #000 4px 4px 0 0,#fff 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #000;
+  }
 }
