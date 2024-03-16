@@ -1,5 +1,5 @@
 import styles from "../page.module.css";
-import Logo from "../../comp/Logo"
+import Logo from "../ui/Logo"
 
 export default function About() {
     return (

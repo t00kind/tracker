@@ -1,9 +1,7 @@
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script'
-
 const mono = Space_Mono({ subsets: ["latin"], weight: '400' });
-
 export const metadata = {
   title: "tracker",
   description: "I'm just better, today.",

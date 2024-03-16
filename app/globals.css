@@ -1,9 +1,8 @@
-@import url(https://db.onlinewebfonts.com/c/0564d754a28f91b8cf7905b2f159e93c?family=Transducer+Test+Extended);
-
 .logo {
-  font-family: "Transducer Test Extended";
-  font-size: xxx-large;
+  font-size: xx-large;
+  font-weight: 400;
 }
+
 .btn {
   appearance: button;
   background-color: #000;
