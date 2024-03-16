@@ -15,7 +15,7 @@ export default function Home() {
       <hr />
       <h1>HUSTLE</h1>
         <button className='btn'>Switch with R</button>
-      <Link href="/tracker/about">About project</Link>
+      <Link href="/about">About project</Link>
     </main>
   );
 }
