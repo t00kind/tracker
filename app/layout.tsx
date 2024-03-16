@@ -8,7 +8,7 @@ export const metadata = {
   title: "tracker",
   description: "I'm just better, today.",
 };
-export default async function RootLayout({ children}: RootLayoutProps) {
+export default async function RootLayout({ children}) {
   return (
     <html>
       <body className={mono.className}>

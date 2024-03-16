@@ -2,11 +2,11 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import Logo from "../comp/Logo";
 import Da from '../comp/Da'
+import { useTelegram } from "./use-telegram";
 
-import Link from "next/link";
+
 
 export default function Home() {
-
   return (
     <main className={styles.main}>
       <Logo />

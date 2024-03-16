@@ -3,8 +3,6 @@
 
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-const testMode = sharedConfig().telegram.testMode;
-
 const TelegramContext = createContext<{ telegram: any; initData: any; originalInitData: any } | null>(null);
 
 export function TelegramProvider({ children }: { children: ReactNode }) {
@@ -21,7 +19,7 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
     }, 100);
   }, []);
 
-  const originalInitData = testMode ? 'test-init-data' : telegram?.WebApp?.initData;
+  const originalInitData = telegram?.WebApp?.initData;
 
   const initData = telegram ? Object.fromEntries(new URLSearchParams(originalInitData)) : null;
 
