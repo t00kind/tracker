@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -9,7 +9,7 @@ import { useTelegram } from "./use-telegram";
 
 
 export default function Home() {
-  const telegram = useTelegram();
+  const telegram = useTelegram()
   return (
     <main className={styles.main}>
       <Logo />
