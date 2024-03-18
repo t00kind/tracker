@@ -1,16 +1,15 @@
-'use client'
+'use client';
 
 import { TelegramProvider, useTelegram } from "../useTg";
 
-const GetTg = () => {
+const Hustler = () => {
   const { user, webApp } = useTelegram();
-  
+  if (user) {console.log(user);}
 
-
-  return 
-  (
-    <TelegramProvider><h1><pre>{JSON.stringify(user, null, 2)}</pre></h1></TelegramProvider>);
+  return (
+      <>
+          <b><h3 className='hustler'> Huslter {user?.first_name} </h3></b>
+      </>
+  );
 };
-
-
-export default GetTg;
+export default Hustler;

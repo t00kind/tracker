@@ -3,6 +3,7 @@ import "./globals.css";
 import type { PropsWithChildren } from 'react';
 
 import { TelegramProvider } from "./useTg";
+import Script from "next/script";
 
 const mono = Space_Mono({ subsets: ["latin"], weight: '400' });
 
@@ -13,7 +14,11 @@ export const metadata = {
 export default async function RootLayout({ children}: PropsWithChildren) {
   return (
     <html>
-      <body className={mono.className}>
+    <body className={mono.className}>
+    <Script
+        src="https://telegram.org/js/telegram-web-app.js"
+        strategy="beforeInteractive"
+    />
         <div>
         <TelegramProvider>
         {children}

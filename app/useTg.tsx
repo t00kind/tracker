@@ -1,6 +1,5 @@
 'use client'
 
-import Script from "next/script";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { ITelegramUser, IWebApp } from "./types";
 
@@ -39,10 +38,7 @@ export const TelegramProvider = ({
   return (
     <TelegramContext.Provider value={value}>
       {/* Make sure to include script tag with "beforeInteractive" strategy to pre-load web-app script */}
-      <Script
-        src="https://telegram.org/js/telegram-web-app.js"
-        strategy="beforeInteractive"
-      />      {children}
+        {children}
     </TelegramContext.Provider>
   );
 };

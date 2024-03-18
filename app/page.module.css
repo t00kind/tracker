@@ -10,6 +10,10 @@
 .cool {
   margin-bottom: 20%
 }
+
+.hustler {
+  background: rgba(238, 72, 72, 0.73);
+}
 .description {
   display: inherit;
   justify-content: inherit;
