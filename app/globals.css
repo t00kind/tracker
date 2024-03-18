@@ -9,14 +9,12 @@
   background-image: none;
   border: 1px solid #000;
   border-radius: 4px;
-  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 20px;
   margin: 0 5px 10px 0;
   overflow: visible;
@@ -38,15 +36,15 @@
     text-decoration: none;
   }
 
-  .btn:active {
-    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+   .btn:active {
     outline: 0;
   }
 
   .btn:not([disabled]):active {
-    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-    transform: translate(2px, 2px);
-  }
+    transform: scale(.95);
+    transition: all .3s;
+
+   }
 
   @media (min-width: 768px) {
     .btn {
@@ -79,7 +77,6 @@ a {
     background-color: #ffffff;
     border: 1px solid #fff;
     border-radius: 4px;
-    box-shadow: #000 4px 4px 0 0,#fff 4px 4px 0 1px;
     box-sizing: border-box;
     color: #000;
   }
