@@ -8,7 +8,8 @@ const Hustler = () => {
 
   return (
       <>
-          <b><h3 className='hustler'> Huslter {user?.first_name} </h3></b>
+          <h2>{user?.first_name} just better</h2>
+
       </>
   );
 };
