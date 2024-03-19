@@ -21,6 +21,7 @@ export const TelegramProvider = ({
     const app = (window as any).Telegram?.WebApp;
     if (app) {
       app.ready();
+      app.expand();
       setWebApp(app);
     }
   }, []);
