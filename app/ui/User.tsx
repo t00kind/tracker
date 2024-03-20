@@ -4,7 +4,6 @@ import { useTelegram } from "../useTg";
 
 const Hustler = () => {
   const { user, webApp } = useTelegram();
-  if (user) {console.log(user);}
 
   return (
       <>

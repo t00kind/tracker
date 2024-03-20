@@ -7,6 +7,7 @@ import Da from './ui/Da';
 import Hustler from "./ui/User";
 import {TelegramProvider, useTelegram} from "./useTg";
 import {useEffect, useState} from "react";
+import Digga from './lb.tsx'
 
 export default function Home() {
   const {user,webApp} = useTelegram();
@@ -17,16 +18,13 @@ export default function Home() {
   useEffect(() => {
       setU(usr?.id);
   }, [usr]);
-  const chng = () => {
-      console.log(unq);
-  }
   return (
-          <main onLoad={chng} className={styles.main}>
+          <main className={styles.main}>
             <Logo />
               <Da />
               <Hustler />
             <h1>Cause He Do Art:</h1>
-              <h1>UUU: {unq}</h1>
+              <Digga id={unq} />
               <button className='btn'>Switch with R</button>
             <Link href="/about">About project</Link>
           </main>
