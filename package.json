@@ -9,7 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.11.0",
+    "@supabase/supabase-js": "^2.39.8",
+    "@tma.js/sdk": "^1.5.0",
+    "@tma.js/sdk-react": "^2.0.0",
     "next": "14.1.0",
+    "prisma": "^5.11.0",
     "react": "^18",
     "react-dom": "^18"
   },

@@ -3,6 +3,12 @@
   font-weight: 400;
 }
 
+.origin {
+  margin: 10px;
+  border: #fff;
+  border-radius: 7%;
+}
+
 .btn {
   appearance: button;
   background-color: #000;
