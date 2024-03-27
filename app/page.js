@@ -7,28 +7,38 @@ import Da from './ui/Da';
 import Hustler from "./ui/Name";
 import {useTelegram} from "./useTg";
 import {useEffect, useState} from "react";
-import Chng from "./lib/auth";
 import User from "./ui/User";
 import Hab from './ui/Art';
+import Auth from './lib/auth';
+
+import prisma from "./lib/prisma";
 
 
 export default function Home() {
   const {user,webApp} = useTelegram();
   const [th, setH] = useState(false);
+  const [aha, setA] = useState(false);
+
 
   const usr = user;
+  const yahay = () => {
+    setA(true);
+  }
   useEffect(() => {
-    Chng(usr);
+    if (usr) {
+      Auth(usr);
+    };
   }, [usr]);
 
   return (
           <main className={styles.main}>
             <Logo />
-            <User user={th} />
+            {Boolean(usr) ? (<User user={th} />): <p>Ain't work on desktop</p>}
               <Da />
               <Hustler />
             <h1>Cause He Do Art: </h1>
-            <Hab title="Холодный душ" />
+            {<Hab title="Привычка X" /> && aha}
+            <button className="btn" onClick={yahay}>Создать</button>
             <Link href="/about">About project</Link>
           </main>
   );

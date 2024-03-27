@@ -8,25 +8,23 @@ datasource db {
 }
 
 model User {
-  id         Int          @unique
-  username   String       @unique
-  habits     Habit[]
-  Completion Completion[]
+  id       BigInt  @unique
+  username String  @unique
+  Habs     Habs[]
+  hustle   BigInt?
 }
 
-model Habit {
-  id          Int          @id @default(autoincrement())
-  name        String
-  completions Completion[]
-  userId      Int
-  user        User         @relation(fields: [userId], references: [id])
+model Habs {
+  id     String  @id @default(cuid())
+  title  String?
+  format Typis
+  userId BigInt
+  User   User?   @relation(fields: [userId], references: [id])
 }
 
-model Completion {
-  id      Int      @id @default(autoincrement())
-  date    DateTime
-  habitId Int      @unique
-  habit   Habit    @relation(fields: [habitId], references: [id])
-  userId  Int
-  user    User     @relation(fields: [userId], references: [id])
+enum Typis {
+  time
+  count
+  tracka
+  bububu
 }

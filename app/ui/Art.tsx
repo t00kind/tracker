@@ -2,8 +2,8 @@ export default function Hab({title}) {
     return (
         <div className="origin">
             <h1>{title}</h1>
-            <b>How much?</b><br />
-            <input type="number" /> <b />
+            <b>Are your ready?</b><br />
+            <input type="checkbox" /> <b />
             <button className="btn">Отъебашить</button>
         </div>
     );
