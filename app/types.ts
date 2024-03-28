@@ -33,9 +33,11 @@ export interface ITelegramUser {
     headerColor: string;
     backgroundColor: string;
     BackButton: {
+      show(): unknown;
       isVisible: boolean;
     };
     MainButton: {
+      setText(arg0: string): unknown;
       text: string;
       color: string;
       textColor: string;

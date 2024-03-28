@@ -17,13 +17,9 @@ import prisma from "./lib/prisma";
 export default function Home() {
   const {user,webApp} = useTelegram();
   const [th, setH] = useState(false);
-  const [aha, setA] = useState(false);
 
 
   const usr = user;
-  const yahay = () => {
-    setA(true);
-  }
   useEffect(() => {
     if (usr) {
       Auth(usr);
@@ -37,8 +33,7 @@ export default function Home() {
               <Da />
               <Hustler />
             <h1>Cause He Do Art: </h1>
-            {<Hab title="Привычка X" /> && aha}
-            <button className="btn" onClick={yahay}>Создать</button>
+            <Link href="/add"><button className="btn">Создать</button></Link>
             <Link href="/about">About project</Link>
           </main>
   );

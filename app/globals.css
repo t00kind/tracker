@@ -2,7 +2,15 @@
   font-size: x-large;
   font-weight: 400;
 }
+.face2 {
+  text-align: center;
+}
 
+.writer {
+  min-width: 15%;
+  min-height: 40%;
+  margin: 10%;
+}
 .origin {
   margin: 10px;
   border: #fff;

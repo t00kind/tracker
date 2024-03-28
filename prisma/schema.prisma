@@ -11,7 +11,8 @@ model User {
   id       BigInt  @unique
   username String  @unique
   Habs     Habs[]
-  hustle   BigInt?
+  hustle   BigInt
+  group_id BigInt
 }
 
 model Habs {
