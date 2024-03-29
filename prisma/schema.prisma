@@ -11,8 +11,8 @@ model User {
   id       BigInt  @unique
   username String  @unique
   Habs     Habs[]
-  hustle   BigInt
-  group_id BigInt
+  hustle   BigInt @default(0)
+  group_id BigInt @default(0)
 }
 
 model Habs {

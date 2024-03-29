@@ -7,6 +7,9 @@ export interface ITelegramUser {
   }
   
   export interface IWebApp {
+    PopupParams: any;
+    onEvent(arg0: string, back: () => void): unknown;
+    SettingsButton: any;
     initData: string;
     initDataUnsafe: {
       query_id: string;
@@ -33,10 +36,14 @@ export interface ITelegramUser {
     headerColor: string;
     backgroundColor: string;
     BackButton: {
+      onClick(bbback: (e: any) => void): unknown;
       show(): unknown;
       isVisible: boolean;
     };
     MainButton: {
+      enable(): unknown;
+      show(): unknown;
+      onClick(sub: () => Promise<void>): unknown;
       setText(arg0: string): unknown;
       text: string;
       color: string;
