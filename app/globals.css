@@ -5,11 +5,38 @@
 .face2 {
   text-align: center;
 }
-
 .writer {
-  height: 40%;
-  margin: 10%;
+  margin-bottom: 15%;
 }
+input {
+  width: 70%;
+  margin: auto;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 6px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+  border: 2px solid #dee1e2;
+  color: rgb(14, 14, 16);
+  background: #dee1e2;
+  display: block;
+  height: 36px;
+  :hover {
+      border-color: #ccc;
+  }
+
+}
+
+select {
+  width: 80%;
+  margin: auto;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 .origin {
   margin: 10px;
   border: #fff;
@@ -85,6 +112,11 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+  input {
+    background-color: rgb(41, 36, 33);
+    border-color: #860e0e;
+    color: white;
   }
   .btn {
     background-color: #ffffff;
