@@ -7,6 +7,7 @@ export interface ITelegramUser {
   }
   
   export interface IWebApp {
+    showPopup(arg0: { title: string; message: string; buttons: { type: string; }[]; }): unknown;
     PopupParams: any;
     onEvent(arg0: string, back: () => void): unknown;
     SettingsButton: any;

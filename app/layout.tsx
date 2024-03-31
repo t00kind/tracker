@@ -2,6 +2,7 @@ import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import type { PropsWithChildren } from 'react';
 
+
 import { TelegramProvider } from "./useTg";
 import Script from "next/script";
 
@@ -20,9 +21,9 @@ export default async function RootLayout({ children}: PropsWithChildren) {
         strategy="beforeInteractive"
     />
         <div>
-        <TelegramProvider>
-        {children}
-        </TelegramProvider>
+            <TelegramProvider>
+               {children}
+            </TelegramProvider>
         </div>
       </body>
     </html>

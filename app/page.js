@@ -7,17 +7,21 @@ import Da from './ui/Da';
 import Hustler from "./ui/Name";
 import {useTelegram} from "./useTg";
 import {useCallback, useEffect, useState, useRef} from "react";
-import User from "./ui/User";
-import Hab from './ui/Art';
+import Habs from './ui/Art';
 import Auth from './lib/auth';
-import find from './lib/find'
+import { useRouter } from "next/navigation";
+import Hustle from "./ui/Hustle";
+
 
 
 export default function Home() {
+  const router = useRouter();
   const {user,webApp} = useTelegram();
-  const [habs, setH] = useState(false);
-  const u = useRef();
-  u.current = user;
+
+  const settt = () => {
+    router.push("/set")
+
+  };
 
 
 
@@ -25,9 +29,18 @@ export default function Home() {
   useEffect(() => {
     if (usr) {
       Auth(usr);
-      HHH();
     };
   }, [usr]);
+
+  useEffect(()=> {
+    if (webApp) {
+    webApp.MainButton.hide();
+    webApp.BackButton.hide();
+    webApp.SettingsButton.show();
+    webApp.SettingsButton.onClick(settt);
+    }
+
+  }, [webApp])
 
   return (
           <main className={styles.main}>
@@ -35,9 +48,17 @@ export default function Home() {
             {Boolean(!usr) && <p>Ain't work on desktop</p>}
               <Da />
               <Hustler />
+              <br />
             <h1>Cause He Do Art: </h1>
+            <br />
             <Link href="/add"><button className="btn">Создать</button></Link>
-            <Link href="/about">About project</Link>
+            <div className="penisis"></div>
+            <Habs id={user?.id}/>
+            <br />
+            <br />
+            <Hustle />
+            <br />
+            <Link href="/about"><b>About project</b></Link>
           </main>
   );
 }

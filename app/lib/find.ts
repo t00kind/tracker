@@ -1,8 +1,11 @@
+'use server';
 import prisma from "./prisma";
 
 const find = async(u) => {
-    console.log(u.id);
-    return true;
+    const r =  await prisma.habs.findMany({
+        where: {userId: u}
+    })
+    return r;
 
 }
 

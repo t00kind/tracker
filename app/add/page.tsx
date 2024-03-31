@@ -24,7 +24,11 @@ export default function Add() {
     
 
     const mangekyo = () => {
-        alert("Success! 🦾");
+        webApp.showPopup({
+            title: "Success! 🦾",
+            message: "Успешна создана.",
+            buttons: [{"type": "ok"}]
+        })
     }
     const sub = useCallback(async() => {
         const r = await push(stateR.current);
@@ -65,9 +69,9 @@ export default function Add() {
             <select onChange={e => setT(e.target.value)} name="typis">
                 <label>Выберите тип</label>
                 <option value="count">Кол-во повторений</option>
-                <option value="time">Продолжительность подхода</option>
+                <option value="time">Продолжительность действия</option>
                 <option value="tracka">Сколько прошло с данного события</option>
-                <option selected="selected" value="bububu">Сделал/Не сделал</option>
+                <option selected={true} value="bububu">Сделал/Не сделал</option>
             </select>
         </div>
     );
