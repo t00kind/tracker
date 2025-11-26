@@ -6,7 +6,8 @@
     "dev": "next dev -p 80",
     "build": "next build",
     "start": "next start -p 1984",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.0.1",
