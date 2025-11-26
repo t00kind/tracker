@@ -1,7 +1,7 @@
 'use client'
 
 import styles from "./page.module.css";
-import Logo from "./UI/Logo";
+import Logo from "./ui/Logo";
 import {useTelegram} from "./useTg";
 import {useEffect} from "react";
 import { useAuthContext } from "./components/AuthProvider";
@@ -36,7 +36,7 @@ export default function Home() {
             <h2>Добро пожаловать, {user.firstName || user.username}!</h2>
             <p>Telegram ID: {user.telegramId}</p>
             <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>
-              Аутентификация успешна! Теперь можно создавать привычки.
+              Аутентификация успешна!
             </p>
           </div>
         )}
