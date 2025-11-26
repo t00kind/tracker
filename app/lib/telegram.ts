@@ -28,7 +28,7 @@ export function validateTelegramWebAppData(initData: string, botToken: string): 
 
     // Вычисляем hash
     const calculatedHash = crypto
-      .createHmac('sha256', secretKey)
+      .createHmac('sha256', secretKey as unknown as crypto.BinaryLike)
       .update(dataCheckString)
       .digest('hex')
 
