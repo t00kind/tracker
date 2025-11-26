@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Модель пользователя Telegram
+model User {
+  id            String   @id @default(cuid())
+  telegramId    BigInt   @unique
+  username      String?
+  firstName     String?
+  lastName      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Связи
+  habits        Habit[]
+  completions   HabitCompletion[]
+
+  @@index([telegramId])
+}
+
+// Модель привычки
+model Habit {
+  id          String   @id @default(cuid())
+  userId      String
+  title       String
+  icon        String?  // Эмодзи или иконка
+  color       String?  // Цвет для UI
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Связи
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completions HabitCompletion[]
+  streaks     HabitStreak[]
+
+  @@index([userId])
+}
+
+// Модель выполнения привычки
+model HabitCompletion {
+  id          String   @id @default(cuid())
+  habitId     String
+  userId      String
+  completedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  // Связи
+  habit       Habit    @relation(fields: [habitId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([habitId])
+  @@index([userId])
+  @@index([completedAt])
+  @@unique([habitId, completedAt])
+}
+
+// Модель серий (streak) для мотивации
+model HabitStreak {
+  id              String   @id @default(cuid())
+  habitId         String
+  currentStreak   Int      @default(0)
+  longestStreak   Int      @default(0)
+  lastCompletedAt DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Связи
+  habit           Habit    @relation(fields: [habitId], references: [id], onDelete: Cascade)
+
+  @@unique([habitId])
+  @@index([habitId])
+}

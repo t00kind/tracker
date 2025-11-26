@@ -5,7 +5,7 @@ const tred = localFont({src: "./tran.woff2"})
 
 function Logo() {
     return (
-        <Link href="/" className='logo'><h1 className={tred.className}>TRCKER</h1></Link>
+        <Link href="/" className='logo'><h1 className={tred.className}>TRCKR</h1></Link>
     );
 }
 

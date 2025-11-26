@@ -1,58 +1,46 @@
 'use client'
 
-import Link from "next/link";
 import styles from "./page.module.css";
+import Logo from "./UI/Logo";
 import {useTelegram} from "./useTg";
-import {useCallback, useEffect, useState, useRef} from "react";
-import { useRouter } from "next/navigation";
-
-
+import {useEffect} from "react";
+import { useAuthContext } from "./components/AuthProvider";
 
 export default function Home() {
-  const router = useRouter();
-  const {user,webApp} = useTelegram();
-
-  const settt = () => {
-    router.push("/set")
-
-  };
-
-
-
-  const usr = user;
-  useEffect(() => {
-    if (usr) {
-      Auth(usr);
-    };
-  }, [usr]);
+  const {webApp} = useTelegram();
+  const { user, loading, isAuthenticated, error } = useAuthContext();
 
   useEffect(()=> {
     if (webApp) {
-    webApp.MainButton.hide();
-    webApp.BackButton.hide();
-    webApp.SettingsButton.show();
-    webApp.SettingsButton.onClick(settt);
+      webApp.MainButton.hide();
+      webApp.BackButton.hide();
+      webApp.SettingsButton.show();
     }
-
   }, [webApp])
 
   return (
-          <main className={styles.main}>
-            <Logo />
-            {Boolean(!usr) && <p>Ain't work on desktop</p>}
-              <Da />
-              <Hustler />
-              <br />
-            <h1>Cause He Do Art: </h1>
-            <br />
-            <Link href="/add"><button className="btn">Создать</button></Link>
-            <div className="penisis"></div>
-            <Habs id={user?.id}/>
-            <br />
-            <br />
-            <Hustle />
-            <br />
-            <Link href="/about"><b>About project</b></Link>
-          </main>
+    <main className={styles.main}>
+      <Logo />
+      
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+        {loading && <p>Загрузка...</p>}
+        
+        {error && (
+          <div style={{ color: 'red' }}>
+            <p>Ошибка: {error}</p>
+          </div>
+        )}
+        
+        {isAuthenticated && user && (
+          <div>
+            <h2>Добро пожаловать, {user.firstName || user.username}!</h2>
+            <p>Telegram ID: {user.telegramId}</p>
+            <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>
+              Аутентификация успешна! Теперь можно создавать привычки.
+            </p>
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
